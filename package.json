@@ -12,14 +12,16 @@
     "url": "git+https://github.com/SavageCore/insomnia-plugin-randomuksortcode.git"
   },
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   },
   "license": "Unlicense",
   "dependencies": {
+    "in-range": "^1.0.0",
     "random-int": "^1.0.0",
     "zero-fill": "^2.2.3"
   },
   "devDependencies": {
+    "ava": "^0.24.0",
     "xo": "^0.18.2"
   },
   "keywords": [
