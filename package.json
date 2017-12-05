@@ -22,6 +22,8 @@
   },
   "devDependencies": {
     "ava": "^0.24.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "xo": "^0.18.2"
   },
   "keywords": [
@@ -37,5 +39,11 @@
     "url": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode/issues"
   },
   "homepage": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode#readme",
-  "author": "SavageCore"
+  "author": "SavageCore",
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  }
 }
