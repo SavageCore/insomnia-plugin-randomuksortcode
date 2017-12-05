@@ -7,12 +7,18 @@
     "name": "randomUKSortCode",
     "description": "Generate a random UK bank sort code"
   },
-  "repository": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavageCore/insomnia-plugin-randomuksortcode.git"
+  },
   "scripts": {
     "test": "xo"
   },
   "license": "Unlicense",
-  "dependencies": [],
+  "dependencies": {
+    "random-int": "^1.0.0",
+    "zero-fill": "^2.2.3"
+  },
   "devDependencies": {
     "xo": "^0.18.2"
   },
@@ -24,5 +30,10 @@
     "rng",
     "number",
     "generator"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode/issues"
+  },
+  "homepage": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode#readme",
+  "author": "SavageCore"
 }

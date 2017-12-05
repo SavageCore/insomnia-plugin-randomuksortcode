@@ -1,3 +1,6 @@
+const randomInt = require('random-int');
+const zeroFill = require('zero-fill');
+
 module.exports.templateTags = [{
 	name: 'randomuksortcode',
 	displayName: 'Random UK Sort Code',
@@ -64,33 +67,23 @@ module.exports.templateTags = [{
     // Based on https://en.wikipedia.org/wiki/Sort_code#London_clearings
 		switch (option) {
 			case 'barclays':
-				return `${getRandomIntInclusive(20, 29)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
+				return `${randomInt(20, 29)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
 			case 'hsbc':
-				return `${getRandomIntInclusive(40, 49)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
+				return `${randomInt(40, 49)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
 			case 'lloyds':
-				return `${getRandomIntInclusive(30, 39)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
+				return `${randomInt(30, 39)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
 			case 'santander':
-				return `09-${pad(getRandomIntInclusive(0, 19), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
+				return `09-${zeroFill(2, randomInt(0, 19), 2)}-${zeroFill(randomInt(0, 99))}`;
 			case 'coop': {
 				const retValues = [];
-				retValues.push(`08-${getRandomIntInclusive(60, 61)}-${pad(getRandomIntInclusive(0, 99), 2)}`);
-				retValues.push(`08-${getRandomIntInclusive(90, 99)}-${pad(getRandomIntInclusive(0, 99), 2)}`);
+				retValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`);
+				retValues.push(`08-${randomInt(90, 99)}-${zeroFill(2, randomInt(0, 99))}`);
 				return retValues[Math.floor(Math.random() * (retValues.length - 0))];
 			}
 			case 'rbs':
-				return `${getRandomIntInclusive(15, 18)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
+				return `${randomInt(15, 18)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
 			default:
 				return 0;
-		}
-		function getRandomIntInclusive(min, max) {
-			min = Math.ceil(min);
-			max = Math.floor(max);
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-		function pad(n, width, z) {
-			z = z || '0';
-			n = String(n);
-			return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 		}
 	}
 }];
