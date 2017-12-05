@@ -4,26 +4,20 @@ module.exports.templateTags = [{
 	description: 'Generate a random UK bank sort code',
 	args: [
 		{
-			displayName: 'HSBC',
-			description: 'HSBC',
+			displayName: 'Barclays',
+			description: 'Barclays',
 			type: 'boolean',
 			defaultValue: true
 		},
 		{
+			displayName: 'HSBC',
+			description: 'HSBC',
+			type: 'boolean',
+			defaultValue: false
+		},
+		{
 			displayName: 'Lloyds',
 			description: 'Lloyds',
-			type: 'boolean',
-			defaultValue: false
-		},
-		{
-			displayName: 'Barclays',
-			description: 'Barclays',
-			type: 'boolean',
-			defaultValue: false
-		},
-		{
-			displayName: 'The Royal Bank of Scotland',
-			description: 'The Royal Bank of Scotland',
 			type: 'boolean',
 			defaultValue: false
 		},
@@ -38,21 +32,24 @@ module.exports.templateTags = [{
 			description: 'The Co-operative Bank',
 			type: 'boolean',
 			defaultValue: false
+		},
+		{
+			displayName: 'The Royal Bank of Scotland',
+			description: 'The Royal Bank of Scotland',
+			type: 'boolean',
+			defaultValue: false
 		}
 	],
-	async run(context, hsbc, lloyds, barclays, rbs, santander, coop) { // eslint-disable-line max-params
+	async run(context, barclays, hsbc, lloyds, santander, coop, rbs) { // eslint-disable-line max-params
 		const options = [];
+		if (barclays) {
+			options.push('barclays');
+		}
 		if (hsbc) {
 			options.push('hsbc');
 		}
 		if (lloyds) {
 			options.push('lloyds');
-		}
-		if (barclays) {
-			options.push('barclays');
-		}
-		if (rbs) {
-			options.push('rbs');
 		}
 		if (santander) {
 			options.push('santander');
@@ -60,17 +57,18 @@ module.exports.templateTags = [{
 		if (coop) {
 			options.push('coop');
 		}
+		if (rbs) {
+			options.push('rbs');
+		}
 		const option = options[Math.floor(Math.random() * (options.length - 0))];
     // Based on https://en.wikipedia.org/wiki/Sort_code#London_clearings
 		switch (option) {
+			case 'barclays':
+				return `${getRandomIntInclusive(20, 29)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
 			case 'hsbc':
 				return `${getRandomIntInclusive(40, 49)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
 			case 'lloyds':
 				return `${getRandomIntInclusive(30, 39)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
-			case 'barclays':
-				return `${getRandomIntInclusive(20, 29)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
-			case 'rbs':
-				return `${getRandomIntInclusive(15, 18)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
 			case 'santander':
 				return `09-${pad(getRandomIntInclusive(0, 19), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
 			case 'coop': {
@@ -79,6 +77,8 @@ module.exports.templateTags = [{
 				retValues.push(`08-${getRandomIntInclusive(90, 99)}-${pad(getRandomIntInclusive(0, 99), 2)}`);
 				return retValues[Math.floor(Math.random() * (retValues.length - 0))];
 			}
+			case 'rbs':
+				return `${getRandomIntInclusive(15, 18)}-${pad(getRandomIntInclusive(0, 99), 2)}-${pad(getRandomIntInclusive(0, 99), 2)}`;
 			default:
 				return 0;
 		}
