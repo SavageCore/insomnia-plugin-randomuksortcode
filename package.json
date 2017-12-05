@@ -1,0 +1,28 @@
+{
+  "name": "insomnia-plugin-randomuksortcode",
+  "description": "Generate random UK bank sort codes inside the Insomnia REST client",
+  "version": "0.0.0",
+  "main": "index.js",
+  "insomnia": {
+    "name": "randomUKSortCode",
+    "description": "Generate a random UK bank sort code"
+  },
+  "repository": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode",
+  "scripts": {
+    "test": "xo"
+  },
+  "license": "Unlicense",
+  "dependencies": [],
+  "devDependencies": {
+    "xo": "^0.18.2"
+  },
+  "keywords": [
+    "insomnia",
+    "plugin",
+    "plugins",
+    "random",
+    "rng",
+    "number",
+    "generator"
+  ]
+}
