@@ -67,13 +67,13 @@ module.exports.templateTags = [{
     // Based on https://en.wikipedia.org/wiki/Sort_code#London_clearings
 		switch (option) {
 			case 'barclays':
-				return `${randomInt(20, 29)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
+				return `${randomInt(20, 29)}-${zeroFill(2, randomInt(0, 99))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'hsbc':
-				return `${randomInt(40, 49)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
+				return `${randomInt(40, 49)}-${zeroFill(2, randomInt(0, 99))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'lloyds':
-				return `${randomInt(30, 39)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
+				return `${randomInt(30, 39)}-${zeroFill(2, randomInt(0, 99))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'santander':
-				return `09-${zeroFill(2, randomInt(0, 19), 2)}-${zeroFill(randomInt(0, 99))}`;
+				return `09-${zeroFill(2, randomInt(0, 19))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'coop': {
 				const retValues = [];
 				retValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`);
@@ -81,7 +81,7 @@ module.exports.templateTags = [{
 				return retValues[Math.floor(Math.random() * (retValues.length - 0))];
 			}
 			case 'rbs':
-				return `${randomInt(15, 18)}-${zeroFill(2, randomInt(0, 99), 2)}-${zeroFill(randomInt(0, 99))}`;
+				return `${randomInt(15, 18)}-${zeroFill(2, randomInt(0, 99))}-${zeroFill(2, randomInt(0, 99))}`;
 			default:
 				return 0;
 		}
