@@ -50,3 +50,8 @@ test('RBS', async t => {
 	t.true(inRange(Number(retArr[1]), 0, 99));
 	t.true(inRange(Number(retArr[2]), 0, 99));
 });
+
+test('Default', async t => {
+	const ret = await templateTags[0].run('', false, false, false, false, false, false);
+	t.is(ret, 0);
+});

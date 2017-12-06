@@ -1,6 +1,9 @@
 > insomnia-plugin-randomuksortcode
 
-[![Build Status](https://travis-ci.org/SavageCore/insomnia-plugin-randomuksortcode.svg?branch=master)](https://travis-ci.org/SavageCore/insomnia-plugin-randomuksortcode) [![Npm Version](https://img.shields.io/npm/v/insomnia-plugin-randomuksortcode.svg)](https://www.npmjs.com/package/insomnia-plugin-randomuksortcode) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![Build Status](https://travis-ci.org/SavageCore/insomnia-plugin-randomuksortcode.svg?branch=master)](https://travis-ci.org/SavageCore/insomnia-plugin-randomuksortcode) [![Npm Version](https://img.shields.io/npm/v/insomnia-plugin-randomuksortcode.svg)](https://www.npmjs.com/package/insomnia-plugin-randomuksortcode) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) 
+[![codecov](https://codecov.io/gh/SavageCore/insomnia-plugin-randomuksortcode/branch/master/graph/badge.svg)](https://codecov.io/gh/SavageCore/insomnia-plugin-randomuksortcode)
+
+
 
 Generate a random UK sort code for Insomnia REST Client.
 

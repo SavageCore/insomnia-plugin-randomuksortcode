@@ -1,2 +1,5 @@
-* text=auto
-*.js text eol=lf
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Image files
+*.png binary
