@@ -5,3 +5,8 @@
 Generate a random UK sort code for [Insomnia](https://insomnia.rest/) REST Client.
 
 ![Screenshot](https://raw.githubusercontent.com/SavageCore/insomnia-plugin-randomuksortcode/master/readme-ss.png)
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/SavageCore/insomnia-plugin-randomuksortcode/badge.svg?style=beer-square)](https://beerpay.io/SavageCore/insomnia-plugin-randomuksortcode)  [![Beerpay](https://beerpay.io/SavageCore/insomnia-plugin-randomuksortcode/make-wish.svg?style=flat-square)](https://beerpay.io/SavageCore/insomnia-plugin-randomuksortcode?focus=wish)
