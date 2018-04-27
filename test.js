@@ -1,5 +1,5 @@
 import test from 'ava';
-import {templateTags} from './index';
+import {templateTags} from '.';
 
 const inRange = require('in-range');
 
