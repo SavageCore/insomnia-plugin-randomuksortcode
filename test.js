@@ -2,8 +2,6 @@ import test from 'ava';
 import ow from 'ow';
 import {templateTags} from '.';
 
-const inRange = require('in-range');
-
 test('Barclays', async t => {
 	const ret = await templateTags[0].run('', 'barclays');
 	const retArr = ret.split('-');
