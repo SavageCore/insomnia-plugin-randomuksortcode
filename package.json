@@ -17,6 +17,7 @@
   "license": "Unlicense",
   "dependencies": {
     "in-range": "^1.0.0",
+    "ow": "^0.1.0",
     "random-int": "^1.0.0",
     "zero-fill": "^2.2.3"
   },
