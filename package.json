@@ -16,7 +16,6 @@
   },
   "license": "Unlicense",
   "dependencies": {
-    "in-range": "^1.0.0",
     "random-int": "^1.0.0",
     "zero-fill": "^2.2.3"
   },
@@ -25,6 +24,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "codecov": "^3.0.1",
+    "in-range": "^1.0.0",
     "nyc": "^11.7.1",
     "xo": "^0.20.3"
   },
