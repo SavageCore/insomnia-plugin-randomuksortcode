@@ -65,7 +65,15 @@ test('RBS', async t => {
 	t.notThrows(() => ow(Number(retArr[2]), ow.number.inRange(0, 99)));
 });
 
-test('Default', async t => {
+test('Bank blank', async t => {
 	const ret = await templateTags[0].run('', '');
 	t.is(ret, 'Error - No bank selected');
+});
+
+test('Bank unset', async t => {
+	const ret = await templateTags[0].run('');
+	const retArr = ret.split('-');
+	t.notThrows(() => ow(Number(retArr[0]), ow.number.inRange(20, 29)));
+	t.notThrows(() => ow(Number(retArr[1]), ow.number.inRange(0, 99)));
+	t.notThrows(() => ow(Number(retArr[2]), ow.number.inRange(0, 99)));
 });
