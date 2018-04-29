@@ -51,7 +51,15 @@ test('RBS', async t => {
 	t.true(inRange(Number(retArr[2]), 0, 99));
 });
 
-test('Default', async t => {
+test('Bank blank', async t => {
 	const ret = await templateTags[0].run('', '');
 	t.is(ret, 'Error - No bank selected');
+});
+
+test('Bank unset', async t => {
+	const ret = await templateTags[0].run('');
+	const retArr = ret.split('-');
+	t.true(inRange(Number(retArr[0]), 20, 29));
+	t.true(inRange(Number(retArr[1]), 0, 99));
+	t.true(inRange(Number(retArr[2]), 0, 99));
 });
