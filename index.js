@@ -31,11 +31,12 @@ module.exports.templateTags = [{
 			case 'santander':
 				return `09-${zeroFill(2, randomInt(0, 19))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'coop': {
-				const retValues = [];
-				retValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`);
-				retValues.push(`08-${randomInt(90, 99)}-${zeroFill(2, randomInt(0, 99))}`);
-				return retValues[Math.floor(Math.random() * (retValues.length - 0))];
+				const returnValueValues = [];
+				returnValueValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`);
+				returnValueValues.push(`08-${randomInt(90, 99)}-${zeroFill(2, randomInt(0, 99))}`);
+				return returnValueValues[Math.floor(Math.random() * (returnValueValues.length - 0))];
 			}
+
 			case 'rbs':
 				return `${randomInt(15, 18)}-${zeroFill(2, randomInt(0, 99))}-${zeroFill(2, randomInt(0, 99))}`;
 			default:
