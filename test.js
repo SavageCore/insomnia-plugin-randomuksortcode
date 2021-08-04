@@ -1,7 +1,6 @@
 import test from 'ava';
-import {templateTags} from '.';
-
-const inRange = require('in-range');
+import inRange from 'in-range';
+import {templateTags} from './index.js';
 
 test('Barclays', async t => {
 	const returnValue = await templateTags[0].run('', 'barclays');

@@ -1,7 +1,7 @@
-const randomInt = require('random-int');
-const zeroFill = require('zero-fill');
+import randomInt from 'random-int';
+import zeroFill from 'zero-fill';
 
-module.exports.templateTags = [{
+export const templateTags = [{
 	name: 'randomuksortcode',
 	displayName: 'Random UK Sort Code',
 	description: 'Generate a random UK bank sort code',
@@ -15,9 +15,9 @@ module.exports.templateTags = [{
 				{displayName: 'Lloyds', value: 'lloyds'},
 				{displayName: 'Santander UK', value: 'santander'},
 				{displayName: 'The Co-operative Bank', value: 'coop'},
-				{displayName: 'The Royal Bank of Scotland', value: 'rbs'}
-			]
-		}
+				{displayName: 'The Royal Bank of Scotland', value: 'rbs'},
+			],
+		},
 	],
 	async run(context, bank = 'barclays') {
 		// Based on https://en.wikipedia.org/wiki/Sort_code#London_clearings
@@ -32,8 +32,7 @@ module.exports.templateTags = [{
 				return `09-${zeroFill(2, randomInt(0, 19))}-${zeroFill(2, randomInt(0, 99))}`;
 			case 'coop': {
 				const returnValueValues = [];
-				returnValueValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`);
-				returnValueValues.push(`08-${randomInt(90, 99)}-${zeroFill(2, randomInt(0, 99))}`);
+				returnValueValues.push(`08-${randomInt(60, 61)}-${zeroFill(2, randomInt(0, 99))}`, `08-${randomInt(90, 99)}-${zeroFill(2, randomInt(0, 99))}`);
 				return returnValueValues[Math.floor(Math.random() * (returnValueValues.length - 0))];
 			}
 
@@ -42,5 +41,5 @@ module.exports.templateTags = [{
 			default:
 				return 'Error - No bank selected';
 		}
-	}
+	},
 }];

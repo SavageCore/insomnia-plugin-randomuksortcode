@@ -5,30 +5,29 @@
   "main": "index.js",
   "insomnia": {
     "name": "randomUKSortCode",
-    "description": "Generate a random UK bank sort code"
+    "description": "Generate a random UK bank sort code."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SavageCore/insomnia-plugin-randomuksortcode.git"
   },
   "scripts": {
-    "test": "xo && nyc ava && nyc report --reporter=text-lcov > coverage.lcov && codecov -t c784eef3-fd67-430b-bf61-f37e83d19ac8"
+    "test": "xo && nyc ava && nyc report --reporter=text-lcov > coverage.lcov && codecov -t c784eef3-fd67-430b-bf61-f37e83d19ac8",
+    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
   },
   "license": "Unlicense",
   "dependencies": {
-    "random-int": "^2.0.1",
+    "random-int": "^3.0.0",
     "zero-fill": "^2.2.4"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
-    "@ava/babel-preset-stage-4": "^4.0.0",
-    "@ava/babel-preset-transform-test-files": "^6.0.0",
-    "ava": "^3.12.1",
-    "babel-preset-env": "^1.7.0",
-    "codecov": "^3.7.2",
-    "in-range": "^2.0.0",
+    "ava": "^3.15.0",
+    "codecov": "^3.8.3",
+    "husky": "^7.0.1",
+    "in-range": "^3.0.0",
     "nyc": "^15.1.0",
-    "xo": "^0.33.0"
+    "shx": "^0.3.3",
+    "xo": "^0.43.0"
   },
   "keywords": [
     "insomnia",
@@ -44,7 +43,9 @@
   },
   "homepage": "https://github.com/SavageCore/insomnia-plugin-randomuksortcode#readme",
   "author": "SavageCore",
-  "ava": {
-    "babel": true
-  }
+  "type": "module",
+	"exports": "./index.js",
+	"engines": {
+		"node": ">=12"
+	}
 }
